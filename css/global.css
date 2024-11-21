@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+	@apply min-h-screen bg-kanagawa-950 text-white font-roboto;
+}
+
+.main-container {
+	@apply container mx-auto flex items-center justify-center min-h-screen flex-col;
+}
+
+.lesson-link {
+	@apply font-semibold text-lg text-purple-200 transition-colors hover:text-pink-500 duration-300 ease-in-out;
+}
+
+.back-link {
+	@apply font-semibold text-2xl text-purple-200 transition-colors hover:text-pink-500 duration-300 ease-in-out absolute top-4 font-firaCode;
+}
+
+.lesson-title {
+	@apply text-2xl font-bold mb-8;
+}
+
+.btn-begin {
+	@apply bg-gray-950 px-8 py-3 rounded-md text-xl transition-colors hover:bg-pink-900 duration-300 ease-in-out;
+}
