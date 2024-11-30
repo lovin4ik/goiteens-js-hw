@@ -7,6 +7,11 @@ body {
 	@apply min-h-screen bg-kanagawa-950 text-white font-roboto;
 }
 
+input,
+input:focus {
+	outline: none;
+}
+
 .main-container {
 	@apply container mx-auto flex items-center justify-center min-h-screen flex-col;
 }
@@ -20,9 +25,21 @@ body {
 }
 
 .lesson-title {
-	@apply text-2xl font-bold mb-8;
+	@apply text-2xl font-bold mb-8 mt-24;
 }
 
 .btn-begin {
 	@apply bg-gray-950 px-8 py-3 rounded-md text-xl transition-colors hover:bg-pink-900 duration-300 ease-in-out;
+}
+
+.lesson-input {
+	@apply bg-purple-200 text-black text-lg px-3 py-2 border border-solid border-transparent rounded-md transition-colors duration-300 hover:border-puce-500 focus:border-puce-500 placeholder:text-black;
+}
+
+.btn-check {
+	@apply bg-gray-950 px-4 py-3 rounded-md text-lg transition-colors hover:bg-pink-900 duration-300 ease-in-out;
+}
+
+.code-wrapper {
+	@apply mt-6;
 }
