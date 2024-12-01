@@ -43,7 +43,7 @@ function lesson2() {
 		health -= Math.floor(Math.random() * 100)
 		mana -= Math.floor(Math.random() * 100)
 
-		return console.log(`ваша мана: ${health}, ваша мана: ${mana}`)
+		return console.log(`ваше здоров'я: ${health}, ваша мана: ${mana}`)
 	}
 
 	game(health, mana)
