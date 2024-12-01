@@ -181,18 +181,15 @@ function lesson4() {
 			console.log("Ім'я має містити не менше 3 символів")
 		} else {
 			errorsName.textContent = ''
-			console.log("Ім'я має містити не менше 3 символів")
 		}
 		if (inputEmail.value.includes('@') && inputEmail.value.includes('.')) {
 			errorsEmail.textContent = ''
-			console.log('Email має містити символ @ та крапку після неї')
 		} else {
 			errorsEmail.textContent = 'Email має містити символ @ та крапку після неї'
 			console.log('Email має містити символ @ та крапку після неї')
 		}
-		if (inputPassword.value.length > 5) {
+		if (inputPassword.value.length >= 6) {
 			errorsPassword.textContent = ''
-			console.log('Пароль має містити не менше 6 символів')
 		} else {
 			errorsPassword.textContent = 'Пароль має містити не менше 6 символів'
 			console.log('Пароль має містити не менше 6 символів')
