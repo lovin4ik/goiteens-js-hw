@@ -6,11 +6,19 @@ function lesson3() {
 	// Створіть змінну email з вашою електронною адресою. Напишіть скрипт, який перевіряє чи містить змінна email символ @ і рахує загальну кількість символів. Результат виведіть в консоль.
 	const email = 'Qj2dM@example.com'
 	const hasAt = email.indexOf('@') !== -1
+	const hasDot = email.indexOf('.')
 
 	if (hasAt) {
 		const emailLength = email.length
-		console.log(emailLength, hasAt)
+		if (hasDot > hasAt) {
+			console.log(emailLength, hasAt)
+		} else {
+			return console.log('Email має містити символ @ та крапку після неї')
+		}
+	} else {
+		return console.log('Email має містити символ @ та крапку після неї')
 	}
+
 	// Записати в окремих змінних кожне слово: My, name, is. Поєднати всі слова в змінну fullName. До змінної fullName додати ‘Viktor’. fullName вивести в консоль.
 	const my = 'My'
 	const name = 'name'
