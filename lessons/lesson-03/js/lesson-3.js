@@ -3,6 +3,7 @@ function lesson3() {
 	// Вивести result в консоль. Перевірити тип змінної result= 5+5+’5’.
 	const result = 5 + 5 + '5'
 	console.log(result)
+
 	// Створіть змінну email з вашою електронною адресою. Напишіть скрипт, який перевіряє чи містить змінна email символ @ і рахує загальну кількість символів. Результат виведіть в консоль.
 	const email = 'Qj2dM@example.com'
 	const hasAt = email.indexOf('@') !== -1
@@ -33,10 +34,11 @@ function lesson3() {
 		'Viktor' +
 		'- це приклад з різними переміними'
 	console.log(fullName)
-	// r
+
 	const words = ['My', 'name', 'is', 'Viktor']
 	const fullName2 = words.join(' ') + ' - це приклад з масивом'
 	console.log(fullName2)
+
 	// Створіть змінну userName з ім’ям користувача і змінну payment з сумою до оплати. За допомогою шаблонного рядка виведіть на екран через alert повідомлення на прикладі цього: «Дякуємо, Олександро! До сплати 300 гривень»
 	const userName = 'Valera'
 	const payment = 300

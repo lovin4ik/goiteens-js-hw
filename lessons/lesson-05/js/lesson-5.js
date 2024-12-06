@@ -57,7 +57,7 @@ function lesson5() {
 	`
 	fifthResult.innerHTML = fifthShowResult
 
-	//? Створити розмітку з формою, що містить список (selec	) з трьома варіантами вибору: "Кава", "Чай" та "Сік". При виборі кожного варіанту виводити відповідне повідомлення в блок на сторінці.
+	//? Створити розмітку з формою, що містить список (select) з трьома варіантами вибору: "Кава", "Чай" та "Сік". При виборі кожного варіанту виводити відповідне повідомлення в блок на сторінці.
 	const resultSelect = document.querySelector('.result-select')
 	const select = document.querySelector('.beverage-select')
 
