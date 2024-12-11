@@ -39,7 +39,7 @@ function lesson8() {
 	// 5. Оновити
 	const cardToUpdate = 'Карточка-4'
 	const indexToUpdate = cards.indexOf(cardToUpdate)
-	cards.splice(indexToUpdate, 1, 'Карточка-4-NEW')
+	cards.splice(indexToUpdate, 1, 'Карточка-4')
 }
 
 beginBtn.addEventListener('click', lesson8)
