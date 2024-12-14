@@ -21,7 +21,8 @@ function lesson4() {
 
 	const secondResult = document.querySelector('.second-result')
 	const showResult2 = `
-		<input type="number" class="lesson-input lesson-input--number" placeholder="Number:"/>
+		<input type="number" class="lesson-input lesson-input--number-first" placeholder="Number:"/>
+		<input type="number" class="lesson-input lesson-input--number-second" placeholder="Number:"/>
 		<button class="btn-check btn-check-number">Провірити число</button>
 		<p class="result-number text-center text-lg font-medium"></p>
 	`
@@ -120,11 +121,14 @@ function lesson4() {
 	btnCheckInputs.addEventListener('click', checkInputs)
 
 	// Створити розмітку з двома числовими полями та кнопкою. При натисканні на кнопку перевіряти, чи сума значень полів більша за 10, якщо так, то виводити повідомлення "Сума більша за 10", якщо ні — "Сума менша або дорівнює 10".
-	const inputNumber = document.querySelector('.lesson-input--number')
+	const inputNumberFirst = document.querySelector('.lesson-input--number-first')
+	const inputNumberSecond = document.querySelector(
+		'.lesson-input--number-second'
+	)
 	const btnCheckNumber = document.querySelector('.btn-check-number')
 	const resultNumber = document.querySelector('.result-number')
 	function checkNumber() {
-		if (inputNumber.value > 10) {
+		if (inputNumberFirst.value + inputNumberSecond.value > 10) {
 			resultNumber.textContent = 'Сума більша за 10'
 			console.log('Сума більша за 10')
 		} else {

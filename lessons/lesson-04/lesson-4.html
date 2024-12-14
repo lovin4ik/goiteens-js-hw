@@ -57,11 +57,12 @@ function checkInputs() {
 btnCheckInputs.addEventListener('click', checkInputs)
 
 // Створити розмітку з двома числовими полями та кнопкою. При натисканні на кнопку перевіряти, чи сума значень полів більша за 10, якщо так, то виводити повідомлення "Сума більша за 10", якщо ні — "Сума менша або дорівнює 10".
-const inputNumber = document.querySelector('.lesson-input--number')
+const inputNumberFirst = document.querySelector('.lesson-input--number-first')
+const inputNumberSecond = document.querySelector('.lesson-input--number-second')
 const btnCheckNumber = document.querySelector('.btn-check-number')
 const resultNumber = document.querySelector('.result-number')
 function checkNumber() {
-	if (inputNumber.value > 10) {
+	if (inputNumberFirst.value + inputNumberSecond.value > 10) {
 		resultNumber.textContent = 'Сума більша за 10'
 		console.log('Сума більша за 10')
 	} else {
