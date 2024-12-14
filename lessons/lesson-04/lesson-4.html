@@ -119,19 +119,23 @@ const errorsPassword = document.querySelector('.errors-password')
 btnCheckForm.addEventListener('click', e => {
 	e.preventDefault()
 
-	if (inputName.value.length < 3) {
+	if (inputName.value.trim().length < 3) {
 		errorsName.textContent = "Ім'я має містити не менше 3 символів"
 		console.log("Ім'я має містити не менше 3 символів")
 	} else {
 		errorsName.textContent = ''
 	}
-	if (inputEmail.value.includes('@') && inputEmail.value.includes('.')) {
+	if (
+		inputEmail.value.indexOf('@') !== -1 &&
+		inputEmail.value.indexOf('.') !== -1 &&
+		inputEmail.value.indexOf('.') > inputEmail.value.indexOf('@')
+	) {
 		errorsEmail.textContent = ''
 	} else {
 		errorsEmail.textContent = 'Email має містити символ @ та крапку після неї'
 		console.log('Email має містити символ @ та крапку після неї')
 	}
-	if (inputPassword.value.length >= 6) {
+	if (inputPassword.value.trim().length >= 6) {
 		errorsPassword.textContent = ''
 	} else {
 		errorsPassword.textContent = 'Пароль має містити не менше 6 символів'
