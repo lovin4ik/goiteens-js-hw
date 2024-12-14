@@ -4,10 +4,13 @@ function lesson4() {
 	showResults4()
 	// Створити розмітку з двома текстовими полями та кнопкою. При натисканні на кнопку перевіряти, чи обидва поля містять значення, якщо так, то виводити повідомлення "Обидва поля заповнені", якщо ні — "Не всі поля заповнені".
 
-	const firstInput = document.querySelector('.lesson-input--first')
-	const secondInput = document.querySelector('.lesson-input--second')
+	let firstInput = document.querySelector('.lesson-input--first')
+	let secondInput = document.querySelector('.lesson-input--second')
 	const btnCheckInputs = document.querySelector('.btn-check-inputs')
 	const resultInputs = document.querySelector('.result-inputs')
+
+	firstInput = firstInput.value.trim()
+	secondInput = secondInput.value.trim()
 	function checkInputs() {
 		if (firstInput.value && secondInput.value) {
 			resultInputs.textContent = 'Обидва поля заповнені'
@@ -61,7 +64,7 @@ function lesson4() {
 
 	btnCheckRange.addEventListener('click', e => {
 		e.preventDefault()
-		if (inputRange.value > 10 && inputRange.value < 20) {
+		if (inputRange.value >= 10 && inputRange.value <= 20) {
 			resultRange.textContent = 'Число входить в діапазон від 10 до 20'
 			console.log('Число входить в діапазон від 10 до 20')
 		} else {
