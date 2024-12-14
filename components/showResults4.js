@@ -65,6 +65,7 @@ export function showResults4() {
 				placeholder="Name:"
 				class="lesson-input lesson-input--name"
 				id="name"
+				required
 			/>
 			<span class="errors-name text-orange-700"></span>
 		</label>
@@ -78,6 +79,7 @@ export function showResults4() {
 				placeholder="Email:"
 				class="lesson-input lesson-input--email"
 				id="email"
+				required
 			/>
 			<span class="errors-email text-orange-700"></span>
 		</label>
@@ -91,6 +93,7 @@ export function showResults4() {
 				placeholder="Password:"
 				class="lesson-input lesson-input--password"
 				id="password"
+				required
 			/>
 			<span class="errors-password text-orange-700"></span>
 		</label>
