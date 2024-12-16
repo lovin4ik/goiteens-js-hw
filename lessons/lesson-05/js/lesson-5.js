@@ -22,6 +22,9 @@ function lesson5() {
 				resultSelect.textContent = 'Ви обрали сік'
 				console.log('Ви обрали сік')
 				break
+			default:
+				resultSelect.textContent = ''
+				break
 		}
 	})
 
