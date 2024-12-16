@@ -8,20 +8,22 @@ function lesson5() {
 	const resultSelect = document.querySelector('.result-select')
 	const select = document.querySelector('.beverage-select')
 
-	switch (select.value) {
-		case 'coffee':
-			resultSelect.textContent = 'Ви вибрали каву'
-			console.log('Ви обрали каву')
-			break
-		case 'tea':
-			resultSelect.textContent = 'Ви обрали чай'
-			console.log('Ви обрали чай')
-			break
-		case 'juice':
-			resultSelect.textContent = 'Ви обрали сік'
-			console.log('Ви обрали сік')
-			break
-	}
+	select.addEventListener('change', () => {
+		switch (select.value) {
+			case 'coffee':
+				resultSelect.textContent = 'Ви вибрали каву'
+				console.log('Ви обрали каву')
+				break
+			case 'tea':
+				resultSelect.textContent = 'Ви обрали чай'
+				console.log('Ви обрали чай')
+				break
+			case 'juice':
+				resultSelect.textContent = 'Ви обрали сік'
+				console.log('Ви обрали сік')
+				break
+		}
+	})
 
 	//? Створити розмітку з полем введення, що приймає рядок та кнопкою. При натисканні на кнопку перевіряти, чи введений рядок є днем тижня (наприклад: "понеділок", "вівторок" і т.д.), виводити відповідне повідомлення про робочий день або вихідний.
 	const btnSecondCheck = document.querySelector('.btn-second-check')
