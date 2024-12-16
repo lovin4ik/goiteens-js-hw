@@ -2604,6 +2604,7 @@ input:focus {
 .lesson-title {
   margin-bottom: 2rem;
   margin-top: 6rem;
+  text-align: center;
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
@@ -2692,6 +2693,7 @@ input:focus {
 
 .code-wrapper {
   margin-top: 1.5rem;
+  padding: 2.5rem;
 }
 
 @media (min-width: 640px) {

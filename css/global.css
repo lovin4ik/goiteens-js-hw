@@ -25,7 +25,7 @@ input:focus {
 }
 
 .lesson-title {
-	@apply text-2xl font-bold mb-8 mt-24;
+	@apply text-2xl text-center font-bold mb-8 mt-24;
 }
 
 .btn-begin {
@@ -41,5 +41,5 @@ input:focus {
 }
 
 .code-wrapper {
-	@apply mt-6;
+	@apply mt-6 p-10;
 }

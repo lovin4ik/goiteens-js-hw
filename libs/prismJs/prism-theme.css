@@ -23,7 +23,7 @@ code[class*='language-']::selection,
 pre[class*='language-']::mozselection,
 code[class*='language-']::mozselection {
 	text-shadow: none;
-	background: #282c34;
+	background: #0f111a;
 }
 @media print {
 	pre[class*='language-'],
