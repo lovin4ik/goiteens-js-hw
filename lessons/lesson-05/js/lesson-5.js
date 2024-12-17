@@ -33,16 +33,23 @@ function lesson5() {
 	const dayInput = document.querySelector('.day-input')
 	const resultDay = document.querySelector('.result-day')
 
-	switch (dayInput.value.toLowerCase()) {
-		case 'понеділок' || 'вівторок' || 'середа' || 'четвер':
-			resultDay.textContent = 'Робочий день'
-			console.log('Робочий день')
-			break
-		case 'неділя' || 'субота':
-			resultDay.textContent = 'Вихідний'
-			console.log('Вихідний')
-			break
-	}
+	btnSecondCheck.addEventListener('click', e => {
+		e.preventDefault()
+
+		switch (dayInput.value.trim().toLowerCase()) {
+			case 'понеділок' || 'вівторок' || 'середа' || 'четвер':
+				resultDay.textContent = 'Робочий день'
+				console.log('Робочий день')
+				break
+			case 'неділя' || 'субота':
+				resultDay.textContent = 'Вихідний'
+				console.log('Вихідний')
+				break
+			default:
+				resultDay.textContent = ''
+				break
+		}
+	})
 
 	//? Створити розмітку з полем введення, що приймає номер місяця та кнопкою. При натисканні на кнопку виводити повідомлення про пору року, до якої належить цей місяць.
 	const monthInput = document.querySelector('.month-input')
@@ -69,7 +76,7 @@ function lesson5() {
 	}
 
 	btnCheckMonth.addEventListener('click', e => {
-		const month = parseInt(monthInput.value)
+		const month = parseInt(monthInput.value.trim())
 		e.preventDefault()
 
 		if (isNaN(month) || month < 1 || month > 12) {
@@ -117,7 +124,7 @@ function lesson5() {
 
 	btnCheckColor.addEventListener('click', e => {
 		e.preventDefault()
-		const selectedColor = colorInput.value.toLowerCase()
+		const selectedColor = colorInput.value.trim().toLowerCase()
 
 		switch (selectedColor) {
 			case 'red':
@@ -125,8 +132,9 @@ function lesson5() {
 				resultColor.textContent = 'стоп'
 				console.log('стоп')
 				break
+
 			case 'green':
-			case 'зелений':
+			case 'зелений':
 				resultColor.textContent = 'йти'
 				console.log('йти')
 				break
@@ -135,24 +143,11 @@ function lesson5() {
 				resultColor.textContent = 'чекати'
 				console.log('чекати')
 				break
+			default:
+				resultColor.textContent = ''
 		}
 	})
 
-	// btnCheckColor.addEventListener('click', e => {
-	// 	e.preventDefault()
-	// 	const selectedColor = colorInput.value.toLowerCase()
-
-	// 	if (selectedColor === 'red' || selectedColor === 'червоний') {
-	// 		resultColor.textContent = 'стоп'
-	// 		console.log('стоп')
-	// 	} else if (selectedColor === 'green' || selectedColor === 'зелений') {
-	// 		resultColor.textContent = 'йти'
-	// 		console.log('йти')
-	// 	} else if (selectedColor === 'yellow' || selectedColor === 'жовтий') {
-	// 		resultColor.textContent = 'чекати'
-	// 		console.log('чекати')
-	// 	}
-	// })
 	//? Створити розмітку з двома полями введення, що приймають числа та список (select) з варіантами вибору операцій: "+", "-", "*", "/". При натисканні на кнопку виводити результат обраної операції над цими числами. Користувач повинен бути попереджений про можливість ділення на нуль.
 	const firstNumberInput = document.querySelector('.calculator-input--first')
 	const secondNumberInput = document.querySelector('.calculator-input--second')
