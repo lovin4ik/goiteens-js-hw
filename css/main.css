@@ -1843,11 +1843,6 @@ video {
   background-color: rgb(228 231 233 / var(--tw-bg-opacity, 1));
 }
 
-.bg-slate-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(45 67 95 / var(--tw-bg-opacity, 1));
-}
-
 .bg-purple-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(29 29 37 / var(--tw-bg-opacity, 1));
