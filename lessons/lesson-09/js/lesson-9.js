@@ -1,5 +1,10 @@
+import { addLogin } from '../../../components/login.js'
+import { showResult9 } from '../../../components/showResult9.js'
+
 const beginBtn = document.querySelector('.btn-begin')
 function lesson9() {
+	showResult9()
+
 	// 	Завдання 1
 	// Напиши функцію logItems(array), яка отримує масив і використовує цикл for, який для кожного елемента масиву буде виводити в консоль повідомлення в форматі [номер елемента] - [значення елемента].
 
@@ -115,6 +120,12 @@ function lesson9() {
 	} else {
 		console.log('Масив чисел порожній')
 	}
+
+	const login = document.querySelector('.lesson-input--login')
+	const allLogins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123']
+	const btnLogin = document.querySelector('.btn-check--login')
+
+	btnLogin.addEventListener('click', () => addLogin(allLogins, login))
 }
 
 beginBtn.addEventListener('click', lesson9)
