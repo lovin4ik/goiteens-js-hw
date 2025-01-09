@@ -1380,6 +1380,10 @@ video {
   gap: 0.5rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .gap-4 {
   gap: 1rem;
 }
@@ -1841,11 +1845,6 @@ video {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(228 231 233 / var(--tw-bg-opacity, 1));
-}
-
-.bg-purple-950 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(29 29 37 / var(--tw-bg-opacity, 1));
 }
 
 .decoration-slice {

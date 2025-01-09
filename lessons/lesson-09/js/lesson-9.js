@@ -125,7 +125,7 @@ function lesson9() {
 	const allLogins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123']
 	const btnLogin = document.querySelector('.btn-check--login')
 
-	btnLogin.addEventListener('click', () => addLogin(allLogins, login))
+	btnLogin.addEventListener('click', () => addLogin(allLogins, login)) //! /components/login.js
 }
 
 beginBtn.addEventListener('click', lesson9)
