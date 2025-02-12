@@ -16,16 +16,18 @@ function lesson9() {
 		for (let i = 0; i < array.length; i++) {
 			console.log(`${i + 1} - ${array[i]}`)
 		}
+		console.log('<- ==================== ->')
 	}
 	logItems(array)
 	logItems(array2)
 
 	// Завдання 2
 	// Напиши скрипт підрахунку вартості гравіювання прикрас. Для цього створи функцію calculateEngravingPrice(message, pricePerWord) приймаючу рядок (в рядку будуть тільки слова і прогалини) і ціну гравіювання одного слова, і повертає ціну гравіювання всіх слів в рядку.
-	console.log('<- ==================== ->')
 	const calculateEngravingPrice = (message, pricePerWord) => {
 		console.log(message.split(' ').length * pricePerWord)
+		console.log('<- ==================== ->')
 	}
+
 	calculateEngravingPrice('JavaScript is in my blood', 10)
 
 	// Завдання 3
@@ -49,7 +51,6 @@ function lesson9() {
 	// Завдання 4
 	// Напиши функцію formatString(string) яка приймає рядок і форматує його якщо необхідно.
 	//!     Якщо довжина рядка не перевищує 40 символів, функція повертає її в початковому вигляді.
-
 	//!     Якщо довжина більше 40 символів, то функція обрізає рядок до 40-ка символів і додає в кінець рядка три крапки '...', після чого повертає укорочену версію.
 	const formatString = string => {
 		const maxLength = 40
@@ -74,6 +75,7 @@ function lesson9() {
 				return console.log(true)
 			}
 		}
+
 		return console.log(false)
 	}
 

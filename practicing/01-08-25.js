@@ -23,6 +23,3 @@ arrayNew = arrayNew.concat(arrayOriginal.slice(1, 4))
 
 console.log('arrayOriginal:', arrayOriginal)
 console.log('arrayNew:', arrayNew)
-console.log(
-	'. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .'
-)

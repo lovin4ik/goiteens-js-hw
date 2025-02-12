@@ -5,14 +5,17 @@ function lesson11() {
 	const bankAccount = {
 		ownerName: 'Valera',
 		accountNumber: '1',
-		balance: 1488,
+		balance: 1488
+	}
+
+	Object.assign(bankAccount, {
 		deposit: function (amount) {
 			this.balance += amount
 		},
 		withdraw: function (amount) {
 			this.balance -= amount
 		}
-	}
+	})
 
 	console.log(`Власник рахунку: ${bankAccount.ownerName}`)
 	console.log(`Номер рахунку: ${bankAccount.accountNumber}`)
@@ -33,11 +36,14 @@ function lesson11() {
 	const weather = {
 		temperature: inputTemperature.value,
 		humidity: 0,
-		windSpeed: 0,
+		windSpeed: 0
+	}
+
+	Object.assign(weather, {
 		getTemperature: function () {
 			return this.temperature < 0
 		}
-	}
+	})
 
 	btnCheckTemperature.addEventListener('click', () => {
 		weather.temperature = inputTemperature.value
@@ -55,12 +61,15 @@ function lesson11() {
 
 	const user = {
 		name: 'Valera',
-		email: 'valera@ua.com',
-		password: 'qwerty1488',
-		login: function (email, password) {
+		email: 'borov1488@gmail.com',
+		password: 'qwerty1488'
+	}
+
+	Object.assign(user, {
+		login: function () {
 			return email === this.email && password === this.password
 		}
-	}
+	})
 
 	btnCheckLogin.addEventListener('click', () => {
 		const isSuccess = user.login(inputEmail.value, inputPassword.value)
@@ -74,13 +83,16 @@ function lesson11() {
 		title: 'Seishun Buta Yarou wa Randoseru Girl no Yume wo Minai',
 		director: ['Hajime Kamoshida', 'Souichi Masui'],
 		year: 2023,
-		rating: 8.31,
-		getRating: function (rating) {
-			return rating > 8
-		}
+		rating: 8.31
 	}
 
-	console.log(movie.getRating(movie.rating))
+	Object.assign(movie, {
+		getRating: function () {
+			return this.rating > 8
+		}
+	})
+
+	console.log(movie.getRating())
 }
 
 beginBtn.addEventListener('click', lesson11())
