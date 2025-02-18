@@ -14,14 +14,26 @@ function lesson11() {
 				return false
 			}
 		},
-		deposit: function (amount) {
-			this.balance += amount
-		},
-		withdraw: function (amount) {
-			if (!this.validTransaction(amount)) {
-				return console.log('error, not enough money')
+		deposit(amount) {
+			if (amount <= 0 || isNaN(Number(inputDeposit.value.trim()))) {
+				return console.log('error deposit is empty or not a number')
 			}
-			this.balance -= amount
+
+			this.balance += Number(amount)
+			return console.log('deposit')
+		},
+		withdraw(amount) {
+			if (amount <= 0 || isNaN(Number(inputWithdraw.value))) {
+				return console.log('error withdraw, amount is empty or not a number')
+			}
+
+			if (amount > this.balance) {
+				result.textContent = 'Error, not enough money'
+				return console.log('Error, not enough money')
+			}
+
+			this.balance -= Number(amount)
+			return console.log('withdraw')
 		}
 	})
 
@@ -38,28 +50,14 @@ function lesson11() {
 	textBalance.textContent = `${bankAccount.balance}$`
 
 	btnDeposit.addEventListener('click', () => {
-		if (
-			inputDeposit.value.trim() === '' ||
-			isNaN(Number(inputDeposit.value.trim()))
-		) {
-			return console.log('error deposit is empty or not a number')
-		}
-
-		bankAccount.deposit(Number(inputDeposit.value))
+		bankAccount.deposit(inputDeposit.value)
 		textBalance.textContent = `${bankAccount.balance}$`
 
 		console.log(`Баланс після поповнення: ${bankAccount.balance}`)
 	})
 
 	btnWithdraw.addEventListener('click', () => {
-		if (
-			inputWithdraw.value.trim() === '' ||
-			isNaN(Number(inputWithdraw.value))
-		) {
-			return console.log('error withdraw is empty or not a number')
-		}
-
-		bankAccount.withdraw(Number(inputWithdraw.value))
+		bankAccount.withdraw(inputWithdraw.value)
 		textBalance.textContent = `${bankAccount.balance}$`
 		console.log(`Баланс після зняття: ${bankAccount.balance}`)
 	})
@@ -97,30 +95,71 @@ function lesson11() {
 			: 'температура вище або рівна 0 градусів Цельсія'
 	})
 
-	// Створіть об’єкт "user", якій буде мати властивості "name", "email", "password". Додайте метод "login", який буде перевіряти правильність введеного email та password. Використайте інпути для запису значень властивостей в об’єкт
+	//? Створіть об’єкт "user" з трьома властивостями:
+	//? "name", "email", "password"
+	//? та додайте їм будь-яких логічних значень значень.
+	//? ✴️ За допомогою додавання властивостей
+	//? додайте до об'єкту метод "login",
+	//? який який буде перевіряти правильність
+	//? введеного name, email та password на такі умови:
+	//?  - ім'я <name> містить не менше 3 символів,
+	//?  - електронна пошта <email> містить символ @ та крапку після неї,
+	//?  - пароль <password> містить не менше 6 символів.
+	//? ❌ Якщо введені дані не пройшли ці перевірки
+	//? треба вивести в консоль відповідні повідомлення з помилками(помилкою).
+	//? ✅ Якщо ВСІ введені дані пройшли перевірки,
+	//? треба послідовно вивести в косоль значення ВСІХ цих даних.
+	//! Код виконаного завдання
 
+	const inputName = document.querySelector('.input-name')
 	const inputEmail = document.querySelector('.input-email')
 	const inputPassword = document.querySelector('.input-password')
 	const btnCheckLogin = document.querySelector('.btn-check-login')
 	const showResulLogin = document.querySelector('.result-login')
 
 	const user = {
-		name: 'Valera',
-		email: 'borov1488@gmail.com',
-		password: 'qwerty1488'
+		name: '',
+		email: '',
+		password: ''
 	}
 
 	Object.assign(user, {
-		login: function (email, password) {
-			if (email.trim() === '' || password.trim() === '') {
+		login(name, email, password) {
+			if (name.trim() === '' || email.trim() === '' || password.trim() === '') {
 				return false
 			}
-			return email.trim() === this.email && password.trim() === this.password
+
+			if (name.length < 3) {
+				return console.log('error name is too short')
+			}
+
+			if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
+				return console.log('error email is not valid')
+			}
+
+			if (password.length < 6) {
+				return console.log('error password is too short')
+			}
+
+			this.name = name
+			this.email = email
+			this.password = password
+
+			console.log(user)
+			console.log(name)
+			console.log(email)
+			console.log(password)
+
+			return true
 		}
 	})
 
 	btnCheckLogin.addEventListener('click', () => {
-		const isSuccess = user.login(inputEmail.value, inputPassword.value)
+		const isSuccess = user.login(
+			inputName.value,
+			inputEmail.value,
+			inputPassword.value
+		)
 		showResulLogin.textContent = isSuccess
 			? 'Вхід успішний'
 			: 'Вхід не успішний'

@@ -214,16 +214,22 @@ const lesson13 = () => {
 		//todo:  Викликає createTransaction для створення об'єкта транзакції
 		//todo:  після чого додає його в історію транзакцій
 		deposit(amount) {
-			if (typeof amount !== 'number' || amount <= 0) {
-				console.log('Error, amount is not a number or empty')
-				return
+			if (isNaN(Number(amount)) || amount <= 0) {
+				resultWrapper.textContent =
+					'Error, amount must be a lot than 0 or not a number'
+				return console.log('Error, amount must be a lot than 0 or not a number')
 			}
 
-			const transaction = this.createTransaction(amount, Transaction.DEPOSIT)
-			this.transactions.push(transaction)
-			this.balance += amount
+			this.balance += Number(amount)
+			const newTransaction = this.createTransaction(amount, Transaction.DEPOSIT)
 
-			console.log(`Success, amount: ${amount}, balance: ${this.balance}`)
+			this.transactions.push(newTransaction)
+			console.log(newTransaction)
+			console.log(this.transactions)
+			wrapperBalance.textContent = `Your balance:${this.balance}$`
+			resultWrapper.textContent = 'deposit is successful'
+			console.log(this.getBalance())
+			return console.log('deposit')
 		},
 
 		//todo:  Метод відповідає за зняття суми з балансу.
@@ -233,21 +239,31 @@ const lesson13 = () => {
 		//todo:  Якщо amount більше, ніж поточний баланс, виводь повідомлення
 		//todo:  про те, що зняття такої суми не можливо, недостатньо коштів.
 		withdraw(amount) {
-			if (typeof amount !== 'number' || amount <= 0) {
-				console.log('Error, amount is not a number or empty')
-				return
+			if (isNaN(Number(amount)) || amount <= 0) {
+				resultWrapper.textContent =
+					'Error, amount must be a lot than 0 or not a number'
+				return console.log('Error, amount must be a lot than 0 or not a number')
 			}
 
 			if (amount > this.balance) {
-				console.log('Error, not enough money')
-				return
+				resultWrapper.textContent = 'Error, not enough money'
+				return console.log('Error, not enough money')
 			}
 
-			const transaction = this.createTransaction(amount, Transaction.WITHDRAW)
-			this.transactions.push(transaction)
-			this.balance -= amount
+			const newTransaction = this.createTransaction(
+				amount,
+				Transaction.WITHDRAW
+			)
 
-			console.log(`Success, amount: ${amount}, balance: ${this.balance}`)
+			this.transactions.push(newTransaction)
+
+			wrapperBalance.textContent = `Your balance:${this.balance}$`
+			resultWrapper.textContent = 'withdraw is successful'
+			this.balance -= Number(amount)
+			console.log(newTransaction)
+			console.log(this.transactions)
+			console.log(this.getBalance())
+			return console.log('withdraw')
 		},
 
 		//todo:  Метод повертає поточний баланс
@@ -265,23 +281,57 @@ const lesson13 = () => {
 		getTransactionTotal(type) {
 			return this.transactions
 				.filter(transaction => transaction.type === type)
-				.reduce((acc, transaction) => acc + transaction.amount, 0)
+				.map(transaction => Number(transaction.amount))
+				.reduce((acc, value) => acc + value, 0)
 		}
 	}
 	//! Код виконаного завдання
 
-	account.deposit(500, Transaction.DEPOSIT)
-	account.getBalance()
-	account.withdraw(300, Transaction.WITHDRAW)
-	account.getBalance()
-	account.deposit(200, Transaction.DEPOSIT)
-	account.getBalance()
-	account.withdraw(150, Transaction.WITHDRAW)
-	account.getBalance()
-	account.deposit(400, Transaction.DEPOSIT)
-	account.getBalance()
-	account.withdraw(500, Transaction.WITHDRAW)
-	account.getBalance()
+	const wrapperBalance = document.querySelector('.balance')
+	const btnDeposit = document.querySelector('.bth-deposit')
+	const btnWithdraw = document.querySelector('.bth-withdraw')
+	const inputAmount = document.querySelector('.input-amount')
+	const resultWrapper = document.querySelector('.result')
+	const inputTransactionId = document.querySelector('.input-transactionId')
+	const btnGetTransactionDetails = document.querySelector(
+		'.bth-getTransactionDetails'
+	)
+	const transactionsSelect = document.querySelector('.transactions-select')
+	const bthGetTransactionTotal = document.querySelector(
+		'.bth-getTransactionTotal'
+	)
+
+	btnDeposit.addEventListener('click', () => {
+		account.deposit(inputAmount.value)
+		wrapperBalance.textContent = account.getBalance()
+	})
+
+	btnWithdraw.addEventListener('click', () => {
+		account.withdraw(inputAmount.value)
+		wrapperBalance.textContent = account.getBalance()
+	})
+
+	btnGetTransactionDetails.addEventListener('click', () => {
+		const id = Number(inputTransactionId.value)
+		if (isNaN(id)) {
+			return console.log('ID must be a number')
+		}
+
+		const transaction = account.getTransactionDetails(id)
+		console.log(transaction)
+	})
+
+	bthGetTransactionTotal.addEventListener('click', () => {
+		const type = transactionsSelect.value
+
+		console.log(
+			account.getTransactionTotal(
+				type === Transaction.DEPOSIT
+					? Transaction.DEPOSIT
+					: Transaction.WITHDRAW
+			)
+		)
+	})
 
 	console.log('--------------------------------------------------')
 }
