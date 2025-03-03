@@ -13,7 +13,7 @@ function lesson10() {
 		resultHelloWorld.textContent = 'Hello World!'
 	})
 
-	// 2. Створи програму, яка генерує випадкове число від 1 до 100. Користувач повинен вгадати число, введенням його в текстове поле. При кліку на кнопку "Перевірити" програма повинна повідомити користувача, чи є їх відповідь правильною.2 [[/images/lesson-10.png]]
+	// 2. Створи програму, яка генерує випадкове число від 1 до 100. Користувач повинен вгадати число, введенням його в текстове поле. При кліку на кнопку "Перевірити" програма повинна повідомити користувача, чи є їх відповідь правильною.2
 	const guessField = document.querySelector('.guessField')
 	const btnCheckField = document.querySelector('.btn-checkField')
 	const resultGuessField = document.querySelector('.result-guessField')
