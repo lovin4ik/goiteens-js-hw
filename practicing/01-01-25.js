@@ -97,6 +97,8 @@ for (const element of myArray) {
 	console.log(element)
 }
 
+const time = new Date()
+
 console.log('-------------------------------------------')
 
 //? 2-4.Знайти ПЕРШЕ ЧИСЛОВЕ значення

@@ -118,5 +118,10 @@ export const LessonsList = [
 		id: 24,
 		title: 'Захист проєкту',
 		path: './lessons/lesson-24/lesson-24.html'
+	},
+	{
+		id: 25,
+		title: 'Практика',
+		path: './practicing/pricting.html'
 	}
 ]
