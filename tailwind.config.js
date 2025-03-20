@@ -196,7 +196,7 @@ module.exports = {
 		fontFamily: {
 			poppins: ['Poppins', 'sans-serif'],
 			roboto: ['Roboto', 'sans-serif'],
-			firaCode: ['Fira Code', 'monospace']
+			'fira-code': ['Fira Code', 'monospace']
 		}
 	},
 	plugins: []
