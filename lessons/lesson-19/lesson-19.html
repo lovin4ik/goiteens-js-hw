@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="shortcut icon"
+			href="../../images/logo.png"
+			type="image/x-icon"
+		/>
+		<title>lesson-19</title>
+		<link rel="stylesheet" href="../../css/main.css" />
+		<link rel="stylesheet" href="../../libs/prismJs/prism.css" />
+		<link rel="stylesheet" href="./lesson-19.css" />
+	</head>
+	<body>
+		<div class="main-container">
+			<a href="../../index.html" class="back-link">Home -></a>
+			<h1 class="lesson-title">19. Події.</h1>
+			<button class="btn-begin">Запустити скрипт</button>
+			<form class="html-form mt-2 flex flex-col justify-center">
+				<p>Choose a color:</p>
+				<label>
+					<input type="radio" name="color" value="red" />
+					Red
+				</label>
+				<label>
+					<input type="radio" name="color" value="white" />
+					White
+				</label>
+				<label>
+					<input type="radio" name="color" value="green" />
+					Green
+				</label>
+			</form>
+			<div class="mt-2">
+				<input type="text" placeholder="Ваше ім'я?" id="name-input" />
+				<h1>Привіт, <span id="name-output">незнайомець</span>!</h1>
+			</div>
+			<div class="mt-2">
+				<input
+					type="text"
+					id="validation-input"
+					data-length="6"
+					placeholder="Введи 6 символів"
+				/>
+			</div>
+			<div class="mt-10 flex flex-col items-center justify-center">
+				<span id="text">Абракадабра!</span>
+				<br />
+				<input id="font-size-control" type="range" />
+			</div>
+		</div>
+		<script src="./js/lesson-19.js" type="module" defer></script>
+		<script src="../../libs/prismJs/prism.js" type="module" defer></script>
+	</body>
+</html>
