@@ -1,0 +1,41 @@
+body {
+	overflow-x: hidden;
+}
+.gallery-wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	overflow: hidden;
+	list-style: none;
+	padding: 0;
+	z-index: 1;
+	display: block;
+}
+
+.gallery {
+	position: relative;
+	width: max-content;
+	height: 100%;
+	z-index: 1;
+	display: flex;
+	gap: 20px;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	transition: 0.3s;
+}
+
+.image-wrapper {
+	flex-shrink: 0;
+	width: 300px;
+	height: 200px;
+	object-fit: cover;
+	cursor: pointer;
+	transition-property: transform, translate, scale, rotate;
+	transition: 0.3s;
+	z-index: 999;
+}
+
+.image {
+	width: 100%;
+	height: 100%;
+}
