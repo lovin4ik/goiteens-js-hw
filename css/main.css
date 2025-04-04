@@ -49,6 +49,7 @@
 @layer theme {
   :root, :host {
     --spacing: 0.25rem;
+    --container-7xl: 80rem;
     --text-sm: 0.875rem;
     --text-sm--line-height: calc(1.25 / 0.875);
     --text-lg: 1.125rem;
@@ -292,6 +293,15 @@
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
+  .w-7xl {
+    width: var(--container-7xl);
+  }
+  .w-10 {
+    width: calc(var(--spacing) * 10);
+  }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
+  }
   .w-full {
     width: 100%;
   }
@@ -349,6 +359,10 @@
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .border-solid {
+    --tw-border-style: solid;
+    border-style: solid;
   }
   .border-gray-300 {
     border-color: #a7b1b9;
